@@ -8,12 +8,14 @@ const DataFetcher = async (dataType, cityName) => {
 
   const request = `${DefaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;
 
-  console.log(request);
+  try {
+    const response = await fetch(request, { mode: 'cors' });
 
-  const response = await fetch(request, { mode: 'cors' });
-
-  if (response.ok) {
-    return await response.json()
+    if (response.ok) {
+      return await response.json()
+    }
+  } catch (e) {
+    console.log(e);
   }
 }
 

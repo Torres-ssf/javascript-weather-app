@@ -94,7 +94,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n//'http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}'\n\nconst DataFetcher = async (dataType, cityName) => {\n\n  const DefaultURL = 'http://api.openweathermap.org/data/2.5/';\n\n  const API_KEY = '5ca8840c0dee5c8795633cf806e88dfc'\n\n  const request = `${DefaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;\n\n  console.log(request);\n\n  const response = await fetch(request, { mode: 'cors' });\n\n  if (response.ok) {\n    return await response.json()\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (DataFetcher);\n\n//# sourceURL=webpack:///./src/components/DataFetcher.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n//'http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}'\n\nconst DataFetcher = async (dataType, cityName) => {\n\n  const DefaultURL = 'http://api.openweathermap.org/data/2.5/';\n\n  const API_KEY = '5ca8840c0dee5c8795633cf806e88dfc'\n\n  const request = `${DefaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;\n\n  try {\n    const response = await fetch(request, { mode: 'cors' });\n\n    if (response.ok) {\n      return await response.json()\n    }\n  } catch (e) {\n    console.log(e);\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (DataFetcher);\n\n//# sourceURL=webpack:///./src/components/DataFetcher.js?");
 
 /***/ }),
 
