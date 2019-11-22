@@ -6,9 +6,9 @@
   "scripts": {
     "test": "jest",
     "build": "webpack --mode production",
-    "dev": "webpack --watch src/ -mode development",
+    "dev": "webpack --watch src/ --mode development",
     "server": "live-server",
-    "scss": "node-sass -watch scss/main.scss -o css"
+    "scss": "node-sass --watch scss/main.scss -o css"
   },
   "repository": {
     "type": "git",
@@ -28,7 +28,5 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10"
   },
-  "dependencies": {
-    "dotenv": "^8.2.0"
-  }
+  "dependencies": {}
 }
