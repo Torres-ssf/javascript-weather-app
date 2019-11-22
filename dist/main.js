@@ -86,15 +86,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/DataFetcher.js":
-/*!***************************************!*\
-  !*** ./src/components/DataFetcher.js ***!
-  \***************************************/
+/***/ "./src/components/GetWeather.js":
+/*!**************************************!*\
+  !*** ./src/components/GetWeather.js ***!
+  \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n//'http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}'\n\nconst DataFetcher = async (dataType, cityName) => {\n\n  const DefaultURL = 'http://api.openweathermap.org/data/2.5/';\n\n  const API_KEY = '5ca8840c0dee5c8795633cf806e88dfc'\n\n  const request = `${DefaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;\n\n  try {\n    const response = await fetch(request, { mode: 'cors' });\n\n    if (response.ok) {\n      return await response.json()\n    }\n  } catch (e) {\n    console.log(e);\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (DataFetcher);\n\n//# sourceURL=webpack:///./src/components/DataFetcher.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst GetWeather = (() => {\n  const fetchWeather = async (dataType, cityName) => {\n\n    const request = `${defaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;\n\n    const data = processData(await fetchData(request));\n\n    console.log(data);\n\n    return data;\n  }\n\n  const fetchData = async (request) => {\n    try {\n      const response = await fetch(request, { mode: 'cors' });\n\n      if (response.ok) {\n        return response.json();\n      }\n    } catch (e) {\n      console.log(e);\n    }\n  }\n\n  const processData = (rustyData) => {\n    const weather = rustyData['weather'][0];\n    return weather;\n  }\n\n  const defaultURL = 'http://api.openweathermap.org/data/2.5/';\n\n  const API_KEY = '5ca8840c0dee5c8795633cf806e88dfc';\n\n  return {\n    fetchWeather\n  };\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GetWeather);\n\n//# sourceURL=webpack:///./src/components/GetWeather.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n//'http://api.openweathermap.
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_DataFetcher__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/DataFetcher */ \"./src/components/DataFetcher.js\");\n\n\nconst result = Object(_components_DataFetcher__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('weather', 'Boston');\n\nresult.then(data => console.log(data));\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_GetWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/GetWeather */ \"./src/components/GetWeather.js\");\n\n\n\nconst result = _components_GetWeather__WEBPACK_IMPORTED_MODULE_0__[\"default\"].fetchWeather('weather', 'Boston');\n\nresult.then(data => {\n    console.log(data);\n}); \n\nconsole.log(result);\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

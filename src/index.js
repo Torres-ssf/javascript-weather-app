@@ -1,7 +1,13 @@
-import DataFetcher from './components/DataFetcher'
+import GetWeather from './components/GetWeather'
 
-const result = DataFetcher('weather', 'Boston');
 
-result.then(data => console.log(data));
+const result = GetWeather.fetchWeather('weather', 'Boston');
+
+result.then(data => {
+    console.log(data);
+}); 
+
+console.log(result);
+
 
 
