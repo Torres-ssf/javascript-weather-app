@@ -56,7 +56,4 @@ const weatherConditions = {
     804: 'overcast clouds: 85-100%'
 }
 
-// 801	Clouds	few clouds: 11-25%	 02d  02n
-// 802	Clouds	scattered clouds: 25-50%	 03d  03n
-// 803	Clouds	broken clouds: 51-84%	 04d  04n
-// 804	Clouds	overcast clouds: 85-100%	 04d  04n
+export default weatherConditions;
