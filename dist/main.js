@@ -86,15 +86,27 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/GetWeather.js":
-/*!**************************************!*\
-  !*** ./src/components/GetWeather.js ***!
-  \**************************************/
+/***/ "./src/components/Dom/Dom.js":
+/*!***********************************!*\
+  !*** ./src/components/Dom/Dom.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst GetWeather = (() => {\n  const fetchWeather = async (dataType, cityName) => {\n\n    const request = `${defaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;\n\n    const data = processData(await fetchData(request));\n\n    console.log(data);\n\n    return data;\n  }\n\n  const fetchData = async (request) => {\n    try {\n      const response = await fetch(request, { mode: 'cors' });\n\n      if (response.ok) {\n        return response.json();\n      }\n    } catch (e) {\n      console.log(e);\n    }\n  }\n\n  const processData = (rustyData) => {\n    const weather = rustyData['weather'][0];\n    console.log(rustyData);\n    return weather;\n  }\n\n  const defaultURL = 'http://api.openweathermap.org/data/2.5/';\n\n  const API_KEY = '5ca8840c0dee5c8795633cf806e88dfc';\n\n  return {\n    fetchWeather\n  };\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GetWeather);\n\n//# sourceURL=webpack:///./src/components/GetWeather.js?");
+eval("__webpack_require__.r(__webpack_exports__);\nconst DomManipul = (() => {\n  const form = document.getElementById('form');\n\n  const weatherInput = document.getElementById('weather-input');\n\n  const cityName = document.getElementById('city-name');\n  const wDescription = document.getElementById('w-description');\n  const tempCur = document.getElementById('temp');\n  const tempMin = document.getElementById('temp-min');\n  const tempMax = document.getElementById('temp-max');\n  \n\n  const onSubmitForm = (callback) => {\n    form.onsubmit = callback;\n  };\n\n  const wInputValue = () => weatherInput.value;\n\n  const setWeather = (weatherObj) => {\n    const { temp, temp_min, temp_max } = weatherObj['main'];\n    const { name } = weatherObj;\n    const { description } = weatherObj['weather'];\n\n    cityName.innerText = name;\n    tempMin.innerText = temp_min;\n    tempMax.innerText = temp_max;\n    tempCur.innerText = temp;\n    wDescription.innerText = description;\n  }\n\n  return {\n    onSubmitForm,\n    wInputValue,\n    setWeather,\n  };\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (DomManipul);\n\n//# sourceURL=webpack:///./src/components/Dom/Dom.js?");
+
+/***/ }),
+
+/***/ "./src/components/GetWeather/GetWeather.js":
+/*!*************************************************!*\
+  !*** ./src/components/GetWeather/GetWeather.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst GetWeather = (() => {\n  const fetchWeather = async (dataType, cityName) => {\n\n    const request = `${defaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;\n\n    const data = processData(await fetchData(request));\n\n    console.log(data);\n\n    return data;\n  }\n\n  const fetchData = async (request) => {\n    try {\n      const response = await fetch(request, { mode: 'cors' });\n\n      if (response.ok) {\n        return response.json();\n      }\n    } catch (e) {\n      console.log(e);\n    }\n  }\n\n  const processData = (rustyData) => {\n    console.log(rustyData);\n    const { name, main } = rustyData;\n    const weather = rustyData['weather'][0];\n    return {\n      name,\n      main,\n      weather\n    };\n  }\n\n  const defaultURL = 'http://api.openweathermap.org/data/2.5/';\n\n  const API_KEY = '5ca8840c0dee5c8795633cf806e88dfc';\n\n  return {\n    fetchWeather\n  };\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (GetWeather);\n\n//# sourceURL=webpack:///./src/components/GetWeather/GetWeather.js?");
 
 /***/ }),
 
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst GetWeather = (() => {\n
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_GetWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/GetWeather */ \"./src/components/GetWeather.js\");\n\n\n\nconst result = _components_GetWeather__WEBPACK_IMPORTED_MODULE_0__[\"default\"].fetchWeather('weather', 'Boston');\n\nresult.then(data => {\n    console.log(data);\n});\n\nconst form = document.getElementById('form');\nform.onsubmit = (e) => {\n    e.preventDefault();\n    const value = document.getElementById('weather-input').value;\n    _components_GetWeather__WEBPACK_IMPORTED_MODULE_0__[\"default\"].fetchWeather('weather', value).then(data => console.log(data))\n}\nconsole.log(form);\n\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_GetWeather_GetWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/GetWeather/GetWeather */ \"./src/components/GetWeather/GetWeather.js\");\n/* harmony import */ var _components_Dom_Dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Dom/Dom */ \"./src/components/Dom/Dom.js\");\n\n\n\nconst result = _components_GetWeather_GetWeather__WEBPACK_IMPORTED_MODULE_0__[\"default\"].fetchWeather('weather', 'Boston');\n\nresult.then(data => {\n  console.log(data);\n  _components_Dom_Dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].setWeather(data);\n});\n\n_components_Dom_Dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].onSubmitForm((e) => {\n  e.preventDefault();\n  console.log(_components_Dom_Dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].wInputValue());\n  const result = _components_GetWeather_GetWeather__WEBPACK_IMPORTED_MODULE_0__[\"default\"].fetchWeather('weather', _components_Dom_Dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].wInputValue());\n  result.then(data => {\n    console.log('finaly');\n    _components_Dom_Dom__WEBPACK_IMPORTED_MODULE_1__[\"default\"].setWeather(data);\n  });\n});\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

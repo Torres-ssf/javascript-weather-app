@@ -23,9 +23,14 @@ const GetWeather = (() => {
   }
 
   const processData = (rustyData) => {
-    const weather = rustyData['weather'][0];
     console.log(rustyData);
-    return weather;
+    const { name, main } = rustyData;
+    const weather = rustyData['weather'][0];
+    return {
+      name,
+      main,
+      weather
+    };
   }
 
   const defaultURL = 'http://api.openweathermap.org/data/2.5/';
