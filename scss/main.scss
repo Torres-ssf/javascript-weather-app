@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap");
 
 body {
   color: white;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-weight: 300;
   text-align: center;
 }
 
 .container {
-  background: linear-gradient(145deg, #EBB382 10%, #D05375 90%);
+  background: linear-gradient(145deg, #ebb382 10%, #d05375 90%);
   margin: 0 auto;
   width: 25%;
+  height: 680px;
+  min-width: 400px;
+  max-width: 420px;
 }
 
 .top-header {
@@ -30,12 +33,61 @@ body {
   height: 48px;
 }
 
+.city-name {
+  font-weight: 300;
+  font-size: 2.8rem;
+  margin: 30px 0 8px;
+}
+
+.w-description {
+  margin: 10px 0;
+  font-weight: 300;
+}
+
+.c-temp {
+  font-size: 3rem;
+  margin: 10px 0 20px;
+}
+
 .weather-icon {
   background: url(../assets/weatherIcons/windy.svg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: 112px 112px;
+  background-size: 168px 168px;
   margin: 0 auto;
-  width: 120px;
-  height: 120px;
+  width: 180px;
+  height: 180px;
+}
+
+.forecast-select {
+  margin: 30px 0 30px;
+  a {
+    color: white;
+    font-size: 0.9rem;
+    margin: 8px;
+    text-decoration: none;
+  }
+}
+
+.forecast-list {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  margin: 0 38px;
+  padding-bottom: 30px;
+
+  p {
+    font-size: 0.9rem;
+    margin: 6px 0;
+  }
+
+  div {
+    background: url(../assets/weatherIcons/rain-sun.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 42px 42px;
+    height: 54px;
+    width: 54px;
+  }
 }

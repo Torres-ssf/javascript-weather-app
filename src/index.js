@@ -8,12 +8,12 @@ result.then(data => {
   DomManipul.setWeather(data);
 });
 
-DomManipul.onSubmitForm((e) => {
-  e.preventDefault();
-  console.log(DomManipul.wInputValue());
-  const result = GetWeather.fetchWeather('weather', DomManipul.wInputValue());
-  result.then(data => {
-    console.log('finaly');
-    DomManipul.setWeather(data);
-  });
-});
+// DomManipul.onSubmitForm((e) => {
+//   e.preventDefault();
+//   console.log(DomManipul.wInputValue());
+//   const result = GetWeather.fetchWeather('weather', DomManipul.wInputValue());
+//   result.then(data => {
+//     console.log('finaly');
+//     DomManipul.setWeather(data);
+//   });
+// });
