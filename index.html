@@ -8,18 +8,18 @@
     <title>Fetch Weather</title>
   </head>
   <body>
-    <div class="container">
+    <div id="container" class="container">
       <header class="header">
         <div class="top-header">
           <button class="sandw"></button>
-          <p><time>11:37</time></p>
+          <p id="time"><time>11:37</time></p>
         </div>
-        <p><time>Friday, 22 June</time></p>
+        <p id="date"><time>Friday, 22 June</time></p>
       </header>
       <main>
         <h1 id="city-name" class="city-name">London</h1>
         <h3 id="w-description" class="w-description">Sun and Cloud</h3>
-        <div class="weather-icon"></div>
+        <div id="main-icon" class="weather-icon"></div>
         <p id="temp" class="c-temp">22&deg;</p>
       </main>
       <footer>
@@ -28,7 +28,7 @@
           <a href="">Today</a>
           <a href="">This Week</a>
         </div>
-        <ul class="forecast-list">
+        <ul id="fore-list" class="forecast-list">
           <li>
             <p><time>10:00</time></p>
             <div></div>

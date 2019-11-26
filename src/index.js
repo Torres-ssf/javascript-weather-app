@@ -1,7 +1,7 @@
 import GetWeather from './components/GetWeather/GetWeather';
 import DomManipul from './components/Dom/Dom';
 
-const result = GetWeather.fetchWeather('weather', 'Boston');
+const result = GetWeather.fetchWeather('forecast', 'Sweden');
 
 result.then(data => {
   console.log(data);
