@@ -1,11 +1,13 @@
+import WeatherUtils from '../../utilities/WeatherUtils'
+
 const GetWeather = (() => {
   const fetchWeather = async (dataType, cityName) => {
 
-    const request = `${defaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}`;
+    const request = `${defaultURL}${dataType}?q=${cityName}&APPID=${API_KEY}&units=metric`;
 
-    const data = processData(await fetchData(request));
+    console.log(request);
 
-    console.log(data);
+    const data = processData(await fetchData(request), 1);
 
     return data;
   }
@@ -22,15 +24,45 @@ const GetWeather = (() => {
     }
   }
 
-  const processData = (rustyData) => {
+  const processData = (rustyData, typeOfRequest) => {
+
+    const weatherObj = {};
+
     console.log(rustyData);
-    const { name, main } = rustyData;
-    const weather = rustyData['weather'][0];
-    return {
-      name,
-      main,
-      weather
-    };
+
+    switch (typeOfRequest) {
+      case WeatherUtils.REQUEST_TYPE_FORECAST:
+
+        const city = rustyData['city']['name'];
+
+        weatherObj['city'] = city;
+
+        const forecastArr = [];
+
+        const list = rustyData['list'];
+
+        for (let i = 0; i < 5; i++) {
+          const item = list[i];
+          const { weather, main, dt_txt } = item;
+          const { temp } = main;
+          const { id, description } = weather[0];
+
+          forecastArr.push({
+            temp,
+            dt_txt,
+            id,
+            description,
+          });
+        }
+
+        weatherObj['weatherArr'] = forecastArr;
+        break;
+
+      default:
+        console.log('estoy default');
+    }
+
+    return weatherObj;
   }
 
   const defaultURL = 'http://api.openweathermap.org/data/2.5/';
