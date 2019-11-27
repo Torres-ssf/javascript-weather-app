@@ -64,7 +64,6 @@ const GetWeather = (() => {
   };
 
   const fetchWeather = async (requestType, cityName) => {
-
     let request = `${defaultURL}${requestType}?q=${cityName}&APPID=${API_KEY}&units=metric`;
 
     if (requestType === 'forecast') request += '&cnt=5';
