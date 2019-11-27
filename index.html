@@ -9,65 +9,58 @@
   </head>
   <body>
     <div id="container" class="container">
+      <div id="loader-container" class="loader-container invisible">
+        <div id="loader" class="loader"></div>
+      </div>
       <header class="header">
         <div class="top-header">
-          <button class="sandw"></button>
-          <p id="time"><time>11:37</time></p>
+          <button id="sandw" class="sandw"></button>
+          <form id="form" class="form" action="">
+            <label for="city"></label>
+            <input id="weather-input" type="text" required />
+            <button id="form-submit"></button>
+          </form>
+          <p id="time"><time></time></p>
         </div>
-        <p id="date"><time>Friday, 22 June</time></p>
+        <p id="date"><time></time></p>
       </header>
-      <main>
-        <h1 id="city-name" class="city-name">London</h1>
-        <h3 id="w-description" class="w-description">Sun and Cloud</h3>
+      <main id="main">
+        <h1 id="city-name" class="city-name"></h1>
+        <h3 id="w-description" class="w-description"></h3>
         <div id="main-icon" class="weather-icon"></div>
-        <p id="temp" class="c-temp">22&deg;</p>
+        <p id="temp" class="c-temp"></p>
       </main>
       <footer>
-        <div class="forecast-select">
-          <a href="">Yesterday</a>
-          <a href="">Today</a>
-          <a href="">This Week</a>
-        </div>
         <ul id="fore-list" class="forecast-list">
           <li>
-            <p><time>10:00</time></p>
+            <p><time></time></p>
             <div></div>
-            <p>18&deg;</p>
+            <p></p>
           </li>
           <li>
-            <p><time>10:00</time></p>
+            <p><time></time></p>
             <div></div>
-            <p>18&deg;</p>
+            <p></p>
           </li>
           <li>
-            <p><time>10:00</time></p>
+            <p><time></time></p>
             <div></div>
-            <p>18&deg;</p>
+            <p></p>
           </li>
           <li>
-            <p><time>10:00</time></p>
+            <p><time></time></p>
             <div></div>
-            <p>18&deg;</p>
+            <p></p>
           </li>
           <li>
-            <p><time>10:00</time></p>
+            <p><time></time></p>
             <div></div>
-            <p>18&deg;</p>
+            <p></p>
           </li>
         </ul>
         <div></div>
       </footer>
     </div>
-    <!-- <form id="form" action="">
-      <label for="city">City</label>
-      <input id="weather-input" type="text" required />
-      <button>Get weather</button>
-    </form>
-    <h3 id="city-name"></h3>
-    <p id="w-description"></p>
-    <p id="temp"></p>
-    <p id="temp-max"></p>
-    <p id="temp-min"></p> -->
     <script src="./dist/main.js"></script>
   </body>
 </html>
