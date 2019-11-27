@@ -6,9 +6,9 @@ const WeatherUtils = (() => {
   const SNOW_COLORS = ['#FFFFFF', '#C5C2CD'];
   const FOG_COLORS = ['#C2C9D3', '#596369'];
 
-  const roundTemp = (temp) => Math.round(temp);
+  const roundTemp = temp => Math.round(temp);
 
-  const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1);
+  const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
 
   const generateGradient = (color1, color2) => `linear-gradient(145deg, ${color1} 20%, ${color2} 80%)`;
 
@@ -27,7 +27,7 @@ const WeatherUtils = (() => {
     return time.slice(0, 5);
   };
 
-  const processTemp = (temp) => `${roundTemp(temp)}&deg`;
+  const processTemp = temp => `${roundTemp(temp)}&deg`;
 
   const decipherID = (id, sunUp) => {
     if (id < 233) {

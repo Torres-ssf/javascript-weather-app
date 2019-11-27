@@ -140,7 +140,7 @@ const DomManipul = (() => {
 
         descriptionTag.innerText = WeatherUtils.capitalize(description);
 
-        iconPath = WeatherUtils.getIconUrl(id)
+        iconPath = WeatherUtils.getIconUrl(id);
         mainIcon.style.background = `${iconPath} no-repeat 50% 50%`;
         mainIcon.style.backgroundSize = '168px 168px';
 
