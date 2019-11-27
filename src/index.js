@@ -1,29 +1,29 @@
 import GetWeather from './components/GetWeather/GetWeather';
-import DomManipul from './components/Dom/Dom';
+import Dom from './components/Dom/Dom';
 
 const initFetch = (cityName) => {
-  DomManipul.toggleLoaderContainer();
+  Dom.toggleLoaderContainer();
   const weather = GetWeather.fetchWeather('weather', cityName);
   const forecast = GetWeather.fetchWeather('forecast', cityName);
 
   weather.then((data) => {
-    DomManipul.setWeather(data, 'weather');
-    DomManipul.toggleLoaderContainer();
-    DomManipul.toggleWeatherAnimation();
+    Dom.setWeather(data, 'weather');
+    Dom.toggleLoaderContainer();
+    Dom.toggleWeatherAnimation();
   });
 
   forecast.then((data) => {
-    DomManipul.setWeather(data, 'forecast');
-    DomManipul.toggleForecastAnimation();
+    Dom.setWeather(data, 'forecast');
+    Dom.toggleForecastAnimation();
   }).catch(() => {
-    DomManipul.setErrorMessage();
-    DomManipul.toggleLoaderContainer();
+    Dom.setErrorMessage();
+    Dom.toggleLoaderContainer();
   });
 };
 
-DomManipul.onSubmitForm((e) => {
+Dom.onSubmitForm((e) => {
   e.preventDefault();
-  const cityName = DomManipul.wInputValue();
+  const cityName = Dom.wInputValue();
   initFetch(cityName);
 });
 

@@ -176,7 +176,7 @@ const DomManipul = (() => {
   };
 
   const setErrorMessage = () => {
-    alert('Invalid input, please try a valid one!');
+    alert('Invalid input, please try a valid one!'); // eslint-disable-line
   };
 
   return {

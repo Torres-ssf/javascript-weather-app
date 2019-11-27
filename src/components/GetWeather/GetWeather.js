@@ -50,7 +50,7 @@ const GetWeather = (() => {
     return weatherObj;
   };
 
-  const fetchData = async (request) => {
+  const fetchData = async (request) => { // eslint-disable-line
     try {
       const response = await fetch(request, { mode: 'cors' });
 
