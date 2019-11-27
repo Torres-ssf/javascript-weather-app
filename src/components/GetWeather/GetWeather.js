@@ -28,10 +28,10 @@ const GetWeather = (() => {
 
         const forecastArr = [];
 
-        for (let i = 0; i < list.length; i += i) {
+        for (let i = 0; i < 5; i += 1) {
           const item = list[i];
           const { weather, main } = item;
-          const dtTxt = item['dt_txt'];
+          const dtTxt = item.dt_txt;
           const { temp } = main;
           const { id } = weather[0];
 
@@ -54,6 +54,19 @@ const GetWeather = (() => {
     return weatherObj;
   };
 
+  const fetchData = async (request) => {
+    try {
+      const response = await fetch(request, { mode: 'cors' });
+
+      if (response.ok) {
+        return response.json();
+      }
+    } catch (e) {
+      return undefined;
+    }
+    return undefined;
+  };
+
   const fetchWeather = async (requestType, cityName) => {
 
     let request = `${defaultURL}${requestType}?q=${cityName}&APPID=${API_KEY}&units=metric`;
@@ -64,18 +77,9 @@ const GetWeather = (() => {
 
     const data = processData(await fetchData(request), requestType);
 
+    console.log(data);
+
     return data;
-  };
-
-  const fetchData = async (request) => {
-    try {
-      const response = await fetch(request, { mode: 'cors' });
-
-      if (response.ok) {
-        return response.json();
-      }
-    } catch (e) {
-    }
   };
 
   return {

@@ -7,14 +7,14 @@ const forecastProm = GetWeather.fetchWeather('forecast', 'California');
 DomManipul.toggleLoaderContainer();
 
 curWeatherProm.then((data) => {
-  // DomManipul.setWeather(data, 'weather');
-  // DomManipul.toggleLoaderContainer();
-  // DomManipul.toggleWeatherAnimation();
+  DomManipul.setWeather(data, 'weather');
+  DomManipul.toggleLoaderContainer();
+  DomManipul.toggleWeatherAnimation();
 });
 
 forecastProm.then((data) => {
-  // DomManipul.setWeather(data, 'forecast');
-  // DomManipul.toggleForecastAnimation();
+  DomManipul.setWeather(data, 'forecast');
+  DomManipul.toggleForecastAnimation();
 })
 
 DomManipul.onSubmitForm((e) => {
@@ -24,16 +24,16 @@ DomManipul.onSubmitForm((e) => {
   const forecast = GetWeather.fetchWeather('forecast', DomManipul.wInputValue());
 
   weather.then((data) => {
-    // DomManipul.setWeather(data, 'weather');
-    // DomManipul.toggleLoaderContainer();
-    // DomManipul.toggleWeatherAnimation();
+    DomManipul.setWeather(data, 'weather');
+    DomManipul.toggleLoaderContainer();
+    DomManipul.toggleWeatherAnimation();
   });
 
   forecast.then((data) => {
-    // DomManipul.setWeather(data, 'forecast');
-    // DomManipul.toggleForecastAnimation();
+    DomManipul.setWeather(data, 'forecast');
+    DomManipul.toggleForecastAnimation();
   }).catch((e) => {
-    // DomManipul.setErrorMessage();
-    // DomManipul.toggleLoaderContainer();
+    DomManipul.setErrorMessage();
+    DomManipul.toggleLoaderContainer();
   });
 });

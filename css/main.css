@@ -61,8 +61,11 @@ button:focus {
   width: 48px;
   height: 48px; }
 
-.sand-disapear {
-  animation: turn-and-hide 500ms forwards; }
+.sand-turn {
+  animation: turn 500ms forwards; }
+
+.sand-turn-back {
+  animation: unturn 500ms forwards; }
 
 .form {
   display: flex;
@@ -85,6 +88,8 @@ button:focus {
   .form .input-appear {
     animation: appear-from-left 500ms backwards 50ms;
     display: inline-block; }
+  .form .input-disappear {
+    animation: hide-from-left 500ms forwards; }
   .form button {
     display: none;
     background: url(../assets/keyboard_arrow_right-24px.svg) 50% 50%;
@@ -97,6 +102,8 @@ button:focus {
   .form .appear-submit {
     animation: appear-from-position 500ms backwards 500ms;
     display: inline-block; }
+  .form .disapear-submit {
+    animation: disappear-from-position 500ms forwards; }
 
 main {
   position: relative; }
@@ -141,20 +148,33 @@ footer {
     height: 54px;
     width: 54px; }
 
-@keyframes turn-and-hide {
+@keyframes turn {
   0% {
     transform: rotate(0); }
   100% {
     transform: rotate(270deg); } }
 
+@keyframes unturn {
+  0% {
+    transform: rotate(270deg); }
+  100% {
+    transform: rotate(0); } }
+
 @keyframes appear-from-left {
   0% {
     opacity: 0;
     transform: translateX(-100%); }
-  1% {
-    opacity: 1; }
   100% {
+    opacity: 1;
     transform: translateX(0); } }
+
+@keyframes hide-from-left {
+  0% {
+    opacity: 1;
+    transform: translateX(); }
+  100% {
+    opacity: 0;
+    transform: translateX(-100%); } }
 
 @keyframes appear-from-position {
   0% {
@@ -165,6 +185,16 @@ footer {
     transform: scale(1.2); }
   100% {
     transform: scale(1); } }
+
+@keyframes disappear-from-position {
+  0% {
+    opacity: 1;
+    transform: scale(1); }
+  25% {
+    transform: scale(1.2); }
+  100% {
+    opacity: 0;
+    transform: scale(0); } }
 
 @keyframes turning {
   0% {

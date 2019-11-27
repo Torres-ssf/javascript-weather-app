@@ -6,13 +6,39 @@ const DomManipul = (() => {
 
   const form = document.getElementById('form');
   const submitButton = document.getElementById('form-submit');
+  submitButton.addEventListener('animationend', (event) => {
+    if (event.animationName === 'disappear-from-position') {
+      submitButton.classList.remove('appear-submit');
+      submitButton.classList.remove('disapear-submit');
+    }
+  });
+
   const weatherInput = document.getElementById('weather-input');
+  weatherInput.addEventListener('animationend', (event) => {
+    if (event.animationName === 'hide-from-left') {
+      weatherInput.classList.remove('input-appear');
+      weatherInput.classList.remove('input-disappear');
+    }
+  });
 
   const sandwButton = document.getElementById('sandw');
+  sandwButton.addEventListener('animationend', (event) => {
+    if (event.animationName === 'unturn') {
+      sandwButton.classList.remove('sand-turn');
+      sandwButton.classList.remove('sand-turn-back');
+    }
+  });
   sandwButton.onclick = (e) => {
-    e.target.classList.toggle('sand-disapear');
-    weatherInput.classList.toggle('input-appear');
-    submitButton.classList.toggle('appear-submit');
+    const classArr = Array.from(e.target.classList);
+    if (classArr.includes('sand-turn')) {
+      e.target.classList.add('sand-turn-back');
+      weatherInput.classList.add('input-disappear');
+      submitButton.classList.add('disapear-submit');
+    } else {
+      e.target.classList.add('sand-turn');
+      weatherInput.classList.add('input-appear');
+      submitButton.classList.add('appear-submit');
+    }
   };
 
   const time = document.getElementById('time');
