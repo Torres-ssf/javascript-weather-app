@@ -10,9 +10,7 @@ const WeatherUtils = (() => {
 
   const capitalize = (string) => string.charAt(0).toUpperCase() + string.slice(1);
 
-  const generateGradient = (color1, color2) => {
-    return `linear-gradient(145deg, ${color1} 20%, ${color2} 80%)`;
-  };
+  const generateGradient = (color1, color2) => `linear-gradient(145deg, ${color1} 20%, ${color2} 80%)`;
 
   const friendForeTime = (time) => {
     const timeArr = time.split(' ')[1];

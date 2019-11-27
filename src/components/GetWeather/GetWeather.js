@@ -1,5 +1,3 @@
-import WeatherUtils from '../../utilities/WeatherUtils'
-
 const GetWeather = (() => {
   const defaultURL = 'http://api.openweathermap.org/data/2.5/';
 
@@ -7,8 +5,6 @@ const GetWeather = (() => {
 
   const processData = (rustyData, requestType) => {
     const weatherObj = {};
-
-    console.log(rustyData);
 
     switch (requestType) {
       case 'weather': {
@@ -46,7 +42,7 @@ const GetWeather = (() => {
         break;
       }
       default:
-        console.log('No default');
+
     }
 
     weatherObj.requestType = requestType;
@@ -73,11 +69,7 @@ const GetWeather = (() => {
 
     if (requestType === 'forecast') request += '&cnt=5';
 
-    console.log(request);
-
     const data = processData(await fetchData(request), requestType);
-
-    console.log(data);
 
     return data;
   };

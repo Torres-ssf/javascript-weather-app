@@ -1,27 +1,10 @@
 import GetWeather from './components/GetWeather/GetWeather';
 import DomManipul from './components/Dom/Dom';
 
-const curWeatherProm = GetWeather.fetchWeather('weather', 'California');
-const forecastProm = GetWeather.fetchWeather('forecast', 'California');
-
-DomManipul.toggleLoaderContainer();
-
-curWeatherProm.then((data) => {
-  DomManipul.setWeather(data, 'weather');
+const initFetch = (cityName) => {
   DomManipul.toggleLoaderContainer();
-  DomManipul.toggleWeatherAnimation();
-});
-
-forecastProm.then((data) => {
-  DomManipul.setWeather(data, 'forecast');
-  DomManipul.toggleForecastAnimation();
-})
-
-DomManipul.onSubmitForm((e) => {
-  e.preventDefault();
-  DomManipul.toggleLoaderContainer();
-  const weather = GetWeather.fetchWeather('weather', DomManipul.wInputValue());
-  const forecast = GetWeather.fetchWeather('forecast', DomManipul.wInputValue());
+  const weather = GetWeather.fetchWeather('weather', cityName);
+  const forecast = GetWeather.fetchWeather('forecast', cityName);
 
   weather.then((data) => {
     DomManipul.setWeather(data, 'weather');
@@ -32,8 +15,16 @@ DomManipul.onSubmitForm((e) => {
   forecast.then((data) => {
     DomManipul.setWeather(data, 'forecast');
     DomManipul.toggleForecastAnimation();
-  }).catch((e) => {
+  }).catch(() => {
     DomManipul.setErrorMessage();
     DomManipul.toggleLoaderContainer();
   });
+};
+
+DomManipul.onSubmitForm((e) => {
+  e.preventDefault();
+  const cityName = DomManipul.wInputValue();
+  initFetch(cityName);
 });
+
+initFetch('California');
