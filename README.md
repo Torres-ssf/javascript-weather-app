@@ -26,6 +26,8 @@ npm run server
 
 ## Usage
 
+![Peek 2019-11-30 10-22](https://user-images.githubusercontent.com/30977845/69901154-e2ba4a80-135c-11ea-8615-8f36de466ac8.gif)
+
 1. Click on the hamburguer button.
 
 2. Type the city name in the input.
