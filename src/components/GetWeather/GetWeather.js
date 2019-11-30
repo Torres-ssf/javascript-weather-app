@@ -42,7 +42,6 @@ const GetWeather = (() => {
         break;
       }
       default:
-
     }
 
     weatherObj.requestType = requestType;
@@ -51,11 +50,8 @@ const GetWeather = (() => {
   };
 
   const fetchData = async (request) => {
-    
     try {
       const response = await fetch(request, { mode: 'cors' });
-
-      console.log(response);
 
       if (response.ok) {
         return response.json();
