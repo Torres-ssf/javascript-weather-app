@@ -51,6 +51,7 @@ const GetWeather = (() => {
   };
 
   const fetchData = async (request) => {
+    
     try {
       const response = await fetch(request, { mode: 'cors' });
 
