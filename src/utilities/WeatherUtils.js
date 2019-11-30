@@ -47,12 +47,8 @@ const WeatherUtils = (() => {
   };
 
   const isSunUp = (dt) => {
-    console.log(dt);
-    console.log(new Date().getHours());
     const hour = dt === undefined ? new Date().getHours()
-      : parseInt(dt.split(' ')[1]);
-    console.log(hour);
-    if(dt !== undefined) console.log(parseInt(dt.split(' ')[1]));
+      : parseInt(dt.split(' ')[1], 10);
     return hour >= 6 && hour < 19;
   };
 
