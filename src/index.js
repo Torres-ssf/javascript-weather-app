@@ -1,5 +1,5 @@
-import GetWeather from './components/GetWeather/GetWeather';// eslint-disable-line
-import Dom from './components/Dom/Dom';// eslint-disable-line
+import GetWeather from './components/GetWeather/GetWeather';
+import Dom from './components/Dom/Dom';
 
 const initFetch = (cityName) => {
   Dom.toggleLoaderContainer();
