@@ -54,6 +54,8 @@ const GetWeather = (() => {
     try {
       const response = await fetch(request, { mode: 'cors' });
 
+      console.log(response);
+
       if (response.ok) {
         return response.json();
       }
