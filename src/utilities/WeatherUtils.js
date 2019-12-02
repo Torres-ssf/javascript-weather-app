@@ -27,7 +27,29 @@ const WeatherUtils = (() => {
     return time.slice(0, 5);
   };
 
-  const processTemp = temp => `${roundTemp(temp)}&deg`;
+  const processTemp = (temp, celsius) => {
+    if (celsius) return formatTemp(temp, celsius);
+    return convertTemp(temp, celsius);
+  }
+
+  const convertTemp = (temp, celsius) => {
+    if (celsius) {
+      temp = fahrenheitToCelsius(temp);
+    } else {
+      temp = celsiusToFahrenheit(temp);
+    }
+
+    return formatTemp(temp, celsius);
+  }
+
+  const formatTemp = (temp, celsius) => {
+    const sym = celsius ? '&#8451;' : '&#8457;'
+    return `${Math.round(temp)}${sym}`;
+  }
+
+  const celsiusToFahrenheit = temp => ((temp * 9 / 5) + 32);
+
+  const fahrenheitToCelsius = temp => (5*(temp - 32)) / 9;
 
   const decipherID = (id, sunUp) => {
     if (id < 233) {
@@ -80,6 +102,7 @@ const WeatherUtils = (() => {
 
   return {
     processTemp,
+    convertTemp,
     friendForeTime,
     capitalize,
     getIconUrl,
