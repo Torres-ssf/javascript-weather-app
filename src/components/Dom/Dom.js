@@ -41,6 +41,7 @@ const DomManipul = (() => {
     }
   };
 
+  /* eslint-disable */
   const celsiusRadio = document.getElementById('celsius-radio');
   celsiusRadio.onclick = () => {
     scaleForm.classList.add('animate-disappear');
@@ -91,12 +92,11 @@ const DomManipul = (() => {
 
   const optionButton = document.getElementById('options');
   optionButton.onclick = () => {
-    const classList = scaleForm.classList;
-    if ([...classList].includes('invisible')) {
-      classList.add('animate-appear');
-      classList.toggle('invisible');
+    if ([...scaleForm.classList].includes('invisible')) {
+      scaleForm.classList.add('animate-appear');
+      scaleForm.classList.toggle('invisible');
     } else {
-      classList.add('animate-disappear');
+      scaleForm.classList.add('animate-disappear');
     }
   };
 
