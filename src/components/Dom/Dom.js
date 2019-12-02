@@ -56,9 +56,9 @@ const DomManipul = (() => {
   });
 
   const optionButton = document.getElementById('options');
-  optionButton.onclick = (e) => {
+  optionButton.onclick = () => {
     const classList = scaleForm.classList;
-    if (Array.from(classList).includes('invisible')) {
+    if ([...classList].includes('invisible')) {
       classList.add('animate-appear');
       classList.toggle('invisible');
     } else {
@@ -69,12 +69,12 @@ const DomManipul = (() => {
   const celsiusRadio = document.getElementById('celsius-radio');
   celsiusRadio.onclick = () => {
     scaleForm.classList.add('animate-disappear');
-  }
+  };
 
   const fahrenheitRadio = document.getElementById('fahrenheit-radio');
   fahrenheitRadio.onclick = () => {
     scaleForm.classList.add('animate-disappear');
-  }
+  };
 
   const time = document.getElementById('time');
   time.addEventListener('animationend', (event) => {
@@ -161,12 +161,12 @@ const DomManipul = (() => {
     const oldCurTemp = parseInt(tempTag.innerText, 10);
     tempTag.innerHTML = WeatherUtils.convertTemp(oldCurTemp, celsius);
 
-    Array.from(foreList.children).map((element) => {
+    [...foreList.children].forEach((element) => {
       const tempTag = element.children[2];
       const oldTemp = parseInt(tempTag.innerText, 10);
       tempTag.innerHTML = WeatherUtils.convertTemp(oldTemp, celsius);
-    })
-  }
+    });
+  };
 
   const setWeather = (weatherObj, requestType) => {
     time.innerText = WeatherUtils.getFriendlyTime();
