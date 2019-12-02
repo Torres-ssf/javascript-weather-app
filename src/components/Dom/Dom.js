@@ -41,6 +41,18 @@ const DomManipul = (() => {
     }
   };
 
+  const updateTempTags = () => {
+    const celsius = celsiusRadio.checked;
+    const oldCurTemp = parseInt(tempTag.innerText, 10);
+    tempTag.innerHTML = WeatherUtils.convertTemp(oldCurTemp, celsius);
+
+    [...foreList.children].forEach((element) => {
+      const tempTag = element.children[2];
+      const oldTemp = parseInt(tempTag.innerText, 10);
+      tempTag.innerHTML = WeatherUtils.convertTemp(oldTemp, celsius);
+    });
+  };
+
   const scaleForm = document.getElementById('scale-form');
   scaleForm.addEventListener('input', () => {
     updateTempTags();
@@ -155,18 +167,6 @@ const DomManipul = (() => {
   };
 
   const wInputValue = () => weatherInput.value;
-
-  const updateTempTags = () => {
-    const celsius = celsiusRadio.checked;
-    const oldCurTemp = parseInt(tempTag.innerText, 10);
-    tempTag.innerHTML = WeatherUtils.convertTemp(oldCurTemp, celsius);
-
-    [...foreList.children].forEach((element) => {
-      const tempTag = element.children[2];
-      const oldTemp = parseInt(tempTag.innerText, 10);
-      tempTag.innerHTML = WeatherUtils.convertTemp(oldTemp, celsius);
-    });
-  };
 
   const setWeather = (weatherObj, requestType) => {
     time.innerText = WeatherUtils.getFriendlyTime();

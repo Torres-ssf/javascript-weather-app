@@ -25,6 +25,15 @@ const WeatherUtils = (() => {
     return time.slice(0, 5);
   };
 
+  const celsiusToFahrenheit = temp => ((temp * 9 / 5) + 32);
+
+  const fahrenheitToCelsius = temp => (5 * (temp - 32)) / 9;
+
+  const formatTemp = (temp, celsius) => {
+    const sym = celsius ? '&#8451;' : '&#8457;';
+    return `${Math.round(temp)}${sym}`;
+  };
+
   const convertTemp = (temp, celsius) => {
     if (celsius) {
       temp = fahrenheitToCelsius(temp);
@@ -39,15 +48,6 @@ const WeatherUtils = (() => {
     if (celsius) return formatTemp(temp, celsius);
     return convertTemp(temp, celsius);
   };
-
-  const formatTemp = (temp, celsius) => {
-    const sym = celsius ? '&#8451;' : '&#8457;'
-    return `${Math.round(temp)}${sym}`;
-  };
-
-  const celsiusToFahrenheit = temp => ((temp * 9 / 5) + 32);
-
-  const fahrenheitToCelsius = temp => (5 * (temp - 32)) / 9;
 
   const decipherID = (id, sunUp) => {
     if (id < 233) {
