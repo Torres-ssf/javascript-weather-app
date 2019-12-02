@@ -41,12 +41,34 @@ const DomManipul = (() => {
     }
   };
 
+  const celsiusRadio = document.getElementById('celsius-radio');
+  celsiusRadio.onclick = () => {
+    scaleForm.classList.add('animate-disappear');
+  };
+
+  const tempTag = document.getElementById('temp');
+  tempTag.addEventListener('animationend', (event) => {
+    if (event.animationName === 'appear-from-position') {
+      tempTag.classList.remove('animate-forecast');
+    }
+  });
+
+  const foreList = document.getElementById('fore-list');
+  const listArr = [...foreList.children];
+  listArr.forEach((elem) => {
+    elem.addEventListener('animationend', (event) => {
+      if (event.animationName === 'appear-from-position') {
+        elem.classList.remove('animate-forecast');
+      }
+    });
+  });
+
   const updateTempTags = () => {
     const celsius = celsiusRadio.checked;
     const oldCurTemp = parseInt(tempTag.innerText, 10);
     tempTag.innerHTML = WeatherUtils.convertTemp(oldCurTemp, celsius);
 
-    [...foreList.children].forEach((element) => {
+    listArr.forEach((element) => {
       const tempTag = element.children[2];
       const oldTemp = parseInt(tempTag.innerText, 10);
       tempTag.innerHTML = WeatherUtils.convertTemp(oldTemp, celsius);
@@ -76,11 +98,6 @@ const DomManipul = (() => {
     } else {
       classList.add('animate-disappear');
     }
-  };
-
-  const celsiusRadio = document.getElementById('celsius-radio');
-  celsiusRadio.onclick = () => {
-    scaleForm.classList.add('animate-disappear');
   };
 
   const fahrenheitRadio = document.getElementById('fahrenheit-radio');
@@ -121,23 +138,6 @@ const DomManipul = (() => {
     if (event.animationName === 'appear-from-position') {
       mainIcon.classList.remove('animate-forecast');
     }
-  });
-
-  const tempTag = document.getElementById('temp');
-  tempTag.addEventListener('animationend', (event) => {
-    if (event.animationName === 'appear-from-position') {
-      tempTag.classList.remove('animate-forecast');
-    }
-  });
-
-  const foreList = document.getElementById('fore-list');
-  const listArr = Array.from(foreList.children);
-  listArr.forEach((elem) => {
-    elem.addEventListener('animationend', (event) => {
-      if (event.animationName === 'appear-from-position') {
-        elem.classList.remove('animate-forecast');
-      }
-    });
   });
 
   const onSubmitForm = (callback) => {
