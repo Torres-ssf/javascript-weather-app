@@ -1,20 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap");
-
 body {
   background: linear-gradient(90deg, #f2efea 20%, #b4b4b4 80%);
   color: white;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 300;
-  text-align: center;
-}
+  text-align: center; }
 
 button:focus {
-  outline: none;
-}
+  outline: none; }
 
 .invisible {
-  display: none;
-}
+  display: none; }
 
 .container {
   background: linear-gradient(145deg, #c2c9d3 20%, #596369 80%);
@@ -26,8 +22,7 @@ button:focus {
   min-width: 400px;
   max-width: 420px;
   overflow: hidden;
-  z-index: 0;
-}
+  z-index: 0; }
 
 .loader-container {
   background: rgba(103, 110, 110, 0.8);
@@ -36,8 +31,7 @@ button:focus {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
-}
+  z-index: 10; }
 
 .loader {
   animation: turning 500ms linear infinite;
@@ -49,17 +43,13 @@ button:focus {
   top: calc(50% - 28px);
   left: calc(50% - 28px);
   width: 56px;
-  height: 56px;
-}
+  height: 56px; }
 
 .top-header {
   display: flex;
-  justify-content: space-between;
-
-  p {
-    margin: 16px 16px 0;
-  }
-}
+  justify-content: space-between; }
+  .top-header p {
+    margin: 16px 16px 0; }
 
 .sandw {
   background: url(../assets/dehaze-24px.svg);
@@ -69,27 +59,21 @@ button:focus {
   border: none;
   cursor: pointer;
   width: 48px;
-  height: 48px;
-}
+  height: 48px; }
 
 .sand-turn {
-  animation: turn 500ms forwards;
-}
+  animation: turn 500ms forwards; }
 
 .sand-turn-back {
-  animation: unturn 500ms forwards;
-}
+  animation: unturn 500ms forwards; }
 
 .form {
   display: flex;
   height: 48px;
-  flex: 1;
-
-  label {
-    display: none;
-  }
-
-  input {
+  flex: 1; }
+  .form label {
+    display: none; }
+  .form input {
     display: none;
     background: transparent;
     box-sizing: border-box;
@@ -98,23 +82,15 @@ button:focus {
     color: white;
     padding: 6px 12px 0 12px;
     font-size: 1.1rem;
-    flex: 1;
-  }
-
-  input:focus {
-    outline: none;
-  }
-
-  .input-appear {
+    flex: 1; }
+  .form input:focus {
+    outline: none; }
+  .form .input-appear {
     animation: appear-from-left 500ms backwards 50ms;
-    display: inline-block;
-  }
-
-  .input-disappear {
-    animation: hide-from-left 500ms forwards;
-  }
-
-  button {
+    display: inline-block; }
+  .form .input-disappear {
+    animation: hide-from-left 500ms forwards; }
+  .form button {
     display: none;
     background: url(../assets/keyboard_arrow_right-24px.svg) 50% 50%;
     background-repeat: no-repeat;
@@ -122,18 +98,12 @@ button:focus {
     border: none;
     cursor: pointer;
     margin: 0 0 0 8px;
-    height: 48px;
-  }
-
-  .appear-submit {
+    height: 48px; }
+  .form .appear-submit {
     animation: appear-from-position 500ms backwards 500ms;
-    display: inline-block;
-  }
-
-  .disapear-submit {
-    animation: disappear-from-position 500ms forwards;
-  }
-}
+    display: inline-block; }
+  .form .disapear-submit {
+    animation: disappear-from-position 500ms forwards; }
 
 .options {
   border: none;
@@ -143,8 +113,7 @@ button:focus {
   background-size: 24px 24px;
   cursor: pointer;
   height: 48px;
-  width: 48px;
-}
+  width: 48px; }
 
 .options-dropdown {
   background-color: #EDE3E4;
@@ -155,206 +124,140 @@ button:focus {
   top: 48px;
   z-index: 10;
   text-align: left;
-  right: 12px;
-
-  input {
-    margin: 8px 0;
-  }
-}
+  right: 12px; }
+  .options-dropdown input {
+    margin: 8px 0; }
 
 .date {
-  margin: 16px 0 8px;
-}
+  margin: 16px 0 8px; }
 
 .time {
-  margin: 0;
-}
+  margin: 0; }
 
 main {
-  position: relative;
-}
+  position: relative; }
 
 .city-name {
   font-weight: 300;
   font-size: 2.8rem;
-  margin: 18px 0;
-}
+  margin: 18px 0; }
 
 .w-description {
   margin: 10px 0;
-  font-weight: 300;
-}
+  font-weight: 300; }
 
 .c-temp {
   font-size: 3rem;
-  margin: 20px 0 20px;
-}
+  margin: 20px 0 20px; }
 
 .weather-icon {
   margin: 16px auto;
   width: 180px;
-  height: 180px;
-}
+  height: 180px; }
 
 footer {
-  margin: 16px 0;
-}
+  margin: 16px 0; }
 
 .animate-appear {
-  animation: appear-without-scale 500ms forwards;
-}
+  animation: appear-without-scale 500ms forwards; }
 
 .animate-disappear {
-  animation: disappear-without-scale 500ms forwards;
-}
+  animation: disappear-without-scale 500ms forwards; }
 
 .animate-forecast {
-  animation: appear-from-position 500ms backwards;
-}
+  animation: appear-from-position 500ms backwards; }
 
 .animate-from-sky {
-  animation: appear-from-sky 700ms forwards;
-}
+  animation: appear-from-sky 700ms forwards; }
 
 .forecast-list {
   padding: 0;
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  margin: 32px 32px;
-
-  p {
+  margin: 32px 32px; }
+  .forecast-list p {
     font-size: 0.9rem;
-    margin: 6px 0;
-  }
-
-  div {
+    margin: 6px 0; }
+  .forecast-list div {
     height: 54px;
-    width: 54px;
-  }
-}
+    width: 54px; }
 
 @keyframes turn {
   0% {
-    transform: rotate(0);
-  }
-
+    transform: rotate(0); }
   100% {
-    transform: rotate(270deg);
-  }
-}
+    transform: rotate(270deg); } }
 
 @keyframes unturn {
   0% {
-    transform: rotate(270deg);
-  }
-
+    transform: rotate(270deg); }
   100% {
-    transform: rotate(0);
-  }
-}
+    transform: rotate(0); } }
 
 @keyframes appear-from-left {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
-  }
-
+    transform: translateX(-100%); }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
+    transform: translateX(0); } }
 
 @keyframes hide-from-left {
   0% {
     opacity: 1;
-    transform: translateX();
-  }
-
+    transform: translateX(); }
   100% {
     opacity: 0;
-    transform: translateX(-100%);
-  }
-}
+    transform: translateX(-100%); } }
 
 @keyframes appear-from-position {
   0% {
     opacity: 0;
-    transform: scale(0);
-  }
-
+    transform: scale(0); }
   75% {
     opacity: 1;
-    transform: scale(1.2);
-  }
-
+    transform: scale(1.2); }
   100% {
-    transform: scale(1);
-  }
-}
+    transform: scale(1); } }
 
 @keyframes appear-without-scale {
   0% {
     opacity: 0;
-    transform: scale(0);
-  }
-
+    transform: scale(0); }
   100% {
     opacity: 1;
-    transform: scale(1);
-  }
-}
+    transform: scale(1); } }
 
 @keyframes disappear-from-position {
   0% {
     opacity: 1;
-    transform: scale(1);
-  }
-
+    transform: scale(1); }
   25% {
-    transform: scale(1.2);
-  }
-
+    transform: scale(1.2); }
   100% {
     opacity: 0;
-    transform: scale(0);
-  }
-}
+    transform: scale(0); } }
 
 @keyframes disappear-without-scale {
   0% {
     opacity: 1;
-    transform: scale(1);
-  }
-
+    transform: scale(1); }
   100% {
     opacity: 0;
-    transform: scale(0);
-  }
-}
+    transform: scale(0); } }
 
 @keyframes turning {
   0% {
-    transform: rotate(0);
-  }
-
+    transform: rotate(0); }
   100% {
-    transform: rotate(360deg);
-  }
-}
+    transform: rotate(360deg); } }
 
 @keyframes appear-from-sky {
   0% {
     opacity: 0;
-    transform: translateY(-100%);
-  }
-
+    transform: translateY(-100%); }
   90% {
-    opacity: 1;
-  }
-
+    opacity: 1; }
   100% {
-    transform: translateY(0);
-  }
-}
+    transform: translateY(0); } }
