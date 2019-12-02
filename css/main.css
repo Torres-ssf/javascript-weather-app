@@ -105,6 +105,35 @@ button:focus {
   .form .disapear-submit {
     animation: disappear-from-position 500ms forwards; }
 
+.options {
+  border: none;
+  box-sizing: border-box;
+  background: url(../assets/more_vert-24px.svg) 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  cursor: pointer;
+  height: 48px;
+  width: 48px; }
+
+.options-dropdown {
+  background-color: #EDE3E4;
+  border-radius: 3%;
+  color: black;
+  padding: 8px 12px;
+  position: absolute;
+  top: 48px;
+  z-index: 10;
+  text-align: left;
+  right: 12px; }
+  .options-dropdown input {
+    margin: 8px 0; }
+
+.date {
+  margin: 16px 0 8px; }
+
+.time {
+  margin: 0; }
+
 main {
   position: relative; }
 
@@ -128,6 +157,12 @@ main {
 
 footer {
   margin: 16px 0; }
+
+.animate-appear {
+  animation: appear-without-scale 500ms forwards; }
+
+.animate-disappear {
+  animation: disappear-without-scale 500ms forwards; }
 
 .animate-forecast {
   animation: appear-from-position 500ms backwards; }
@@ -186,12 +221,28 @@ footer {
   100% {
     transform: scale(1); } }
 
+@keyframes appear-without-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
 @keyframes disappear-from-position {
   0% {
     opacity: 1;
     transform: scale(1); }
   25% {
     transform: scale(1.2); }
+  100% {
+    opacity: 0;
+    transform: scale(0); } }
+
+@keyframes disappear-without-scale {
+  0% {
+    opacity: 1;
+    transform: scale(1); }
   100% {
     opacity: 0;
     transform: scale(0); } }
