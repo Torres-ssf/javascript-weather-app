@@ -1,4 +1,4 @@
-# Foobar
+# Weather App
 
 This project is one of the Main JavaScript curriculum projects at [Microverse](https://https://www.microverse.org/) - @microverseinc
 
@@ -26,7 +26,7 @@ npm run server
 
 ## Usage
 
-![Peek 2019-11-30 10-22](https://user-images.githubusercontent.com/30977845/69901154-e2ba4a80-135c-11ea-8615-8f36de466ac8.gif)
+![weather-app](https://user-images.githubusercontent.com/30977845/69987588-9c144e00-151e-11ea-878d-e99cc4ee2254.gif)
 
 1. Click on the hamburguer button.
 
