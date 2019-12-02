@@ -41,7 +41,47 @@ const DomManipul = (() => {
     }
   };
 
+  const scaleForm = document.getElementById('scale-form');
+  scaleForm.addEventListener('input', () => {
+    updateTempTags();
+  });
+  scaleForm.addEventListener('animationend', (event) => {
+    if (event.animationName === 'appear-without-scale') {
+      scaleForm.classList.remove('animate-appear');
+    }
+    if (event.animationName === 'disappear-without-scale') {
+      scaleForm.classList.remove('animate-disappear');
+      scaleForm.classList.toggle('invisible');
+    }
+  });
+
+  const optionButton = document.getElementById('options');
+  optionButton.onclick = (e) => {
+    const classList = scaleForm.classList;
+    if (Array.from(classList).includes('invisible')) {
+      classList.add('animate-appear');
+      classList.toggle('invisible');
+    } else {
+      classList.add('animate-disappear');
+    }
+  };
+
+  const celsiusRadio = document.getElementById('celsius-radio');
+  celsiusRadio.onclick = () => {
+    scaleForm.classList.add('animate-disappear');
+  }
+
+  const fahrenheitRadio = document.getElementById('fahrenheit-radio');
+  fahrenheitRadio.onclick = () => {
+    scaleForm.classList.add('animate-disappear');
+  }
+
   const time = document.getElementById('time');
+  time.addEventListener('animationend', (event) => {
+    if (event.animationName === 'appear-from-sky') {
+      time.classList.remove('animate-from-sky');
+    }
+  });
 
   const date = document.getElementById('date');
   date.addEventListener('animationend', (event) => {
@@ -98,6 +138,7 @@ const DomManipul = (() => {
 
   const toggleWeatherAnimation = () => {
     date.classList.add('animate-from-sky');
+    time.classList.add('animate-from-sky');
     cityName.classList.add('animate-from-sky');
     descriptionTag.classList.add('animate-from-sky');
     mainIcon.classList.add('animate-forecast');
@@ -114,6 +155,18 @@ const DomManipul = (() => {
   };
 
   const wInputValue = () => weatherInput.value;
+
+  const updateTempTags = () => {
+    const celsius = celsiusRadio.checked;
+    const oldCurTemp = parseInt(tempTag.innerText, 10);
+    tempTag.innerHTML = WeatherUtils.convertTemp(oldCurTemp, celsius);
+
+    Array.from(foreList.children).map((element) => {
+      const tempTag = element.children[2];
+      const oldTemp = parseInt(tempTag.innerText, 10);
+      tempTag.innerHTML = WeatherUtils.convertTemp(oldTemp, celsius);
+    })
+  }
 
   const setWeather = (weatherObj, requestType) => {
     time.innerText = WeatherUtils.getFriendlyTime();
@@ -144,7 +197,8 @@ const DomManipul = (() => {
         mainIcon.style.background = `${iconPath} no-repeat 50% 50%`;
         mainIcon.style.backgroundSize = '168px 168px';
 
-        tempTag.innerHTML = WeatherUtils.processTemp(temp);
+        const processedTemp = WeatherUtils.processTemp(temp, celsiusRadio.checked);
+        tempTag.innerHTML = processedTemp;
         break;
       }
 
@@ -167,7 +221,8 @@ const DomManipul = (() => {
           currentItem.children[0].innerHTML = WeatherUtils.friendForeTime(dtTxt);
           currentItem.children[1].style.background = `${iconPath} no-repeat 50% 50%`;
           currentItem.children[1].style.backgroundSize = '42px 42px';
-          currentItem.children[2].innerHTML = WeatherUtils.processTemp(temp);
+          const processedTemp = WeatherUtils.processTemp(temp, celsiusRadio.checked);
+          currentItem.children[2].innerHTML = processedTemp;
         });
         break;
       }
