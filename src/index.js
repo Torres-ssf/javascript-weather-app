@@ -1,5 +1,6 @@
 import GetWeather from './components/GetWeather/GetWeather';
 import Dom from './components/Dom/Dom';
+import './scss/main.scss';
 
 const initFetch = (cityName) => {
   Dom.toggleLoaderContainer();
