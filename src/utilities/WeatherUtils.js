@@ -1,3 +1,13 @@
+import clear from '../assets/clear.svg';
+import clearNight from '../assets/clear-night.svg';
+import clouds from '../assets/clouds.svg';
+import cloudsNight from '../assets/clouds-night.svg';
+import drizzle from '../assets/drizzle.svg';
+import rain from '../assets/rain.svg';
+import thunderstorm from '../assets/thunderstorm.svg';
+import snow from '../assets/snow.svg';
+import mist from '../assets/mist.svg';
+
 const WeatherUtils = (() => {
   const CLEAR_HOT_DAY_COLORS = ['#ebb382', '#d05375'];
   const CLEAR_COOL_DAY_COLORS = ['#C5D382', '#628A4B'];
@@ -95,7 +105,46 @@ const WeatherUtils = (() => {
 
   const getIconUrl = (id, dt) => {
     const condition = decipherID(id, isSunUp(dt));
-    return `url(../assets/weatherIcons/${condition}.svg)`;
+    let conditionPath;
+
+    switch (condition) {
+      case 'clear':
+        conditionPath = clear;
+        break;
+
+      case 'clear-night':
+        conditionPath = clearNight;
+        break;
+
+      case 'clouds':
+        conditionPath = clouds;
+        break;
+
+      case 'clouds-night':
+        conditionPath = cloudsNight;
+        break;
+
+      case 'drizzle':
+        conditionPath = drizzle;
+        break;
+
+      case 'rain':
+        conditionPath = rain;
+        break;
+
+      case 'thunderstorm':
+        conditionPath = thunderstorm;
+        break;
+
+      case 'snow':
+        conditionPath = snow;
+        break;
+
+      default:
+        conditionPath = mist;
+    }
+
+    return `url(${conditionPath})`;
   };
 
   return {
