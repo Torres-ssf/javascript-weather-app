@@ -6,20 +6,21 @@ The [assignment](https://www.theodinproject.com/courses/javascript/lessons/weath
 
 -Search region by name.
 -Show forecast for the next hours.
--Chose between two different system for measuring heat(Fahrenheit and Celsius).
-
-## Preview
-
-![](./demo.gif)
+-Choose between two different system for measuring heat(Fahrenheit and Celsius).
 
 ## Built With
 
 - Javascript, HTML5 and CSS3.
 - Node, Webpack and node-sass.
+- Many other dependecies related to webpack configuration(loaders and plugins).
 
 ## Live Demo
 
 [Live Demo Link](https://ssf-weather-app.herokuapp.com/)
+
+## Preview
+
+![](./demo.gif)
 
 ## Getting Started
 
