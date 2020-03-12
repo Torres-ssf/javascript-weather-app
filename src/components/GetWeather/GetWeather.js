@@ -1,5 +1,5 @@
 const GetWeather = (() => {
-  const defaultURL = 'http://api.openweathermap.org/data/2.5/';
+  const defaultURL = 'https://api.openweathermap.org/data/2.5/';
 
   const API_KEY = '5ca8840c0dee5c8795633cf806e88dfc';
 
