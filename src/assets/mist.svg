@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="17mm"
-   height="18mm"
-   viewBox="0 0 17 18"
+   width="475.85999"
+   height="512"
+   viewBox="0 0 125.90462 135.46667"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 (f8dce91, 2019-08-02)"
-   sodipodi:docname="drawing-24.svg">
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="mist.svg">
   <defs
      id="defs2">
     <clipPath
@@ -58,9 +58,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="53.803231"
-     inkscape:cy="21.80419"
+     inkscape:zoom="0.70000001"
+     inkscape:cx="233.2755"
+     inkscape:cy="333.00597"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -68,7 +68,8 @@
      inkscape:window-height="1016"
      inkscape:window-x="70"
      inkscape:window-y="27"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     units="px" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -85,9 +86,9 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-279)">
+     transform="translate(0,-161.53333)">
     <g
-       transform="matrix(0.35277777,0,0,-0.35277777,-110.8008,397.08379)"
+       transform="matrix(2.7794129,0,0,-2.779385,-876.97704,1088.6911)"
        id="g1059">
       <g
          clip-path="url(#clipPath1019)"
@@ -98,7 +99,7 @@
            id="g1023">
           <path
              d="m 0,0 h -30.391 c -0.792,0 -1.433,0.642 -1.433,1.434 0,0.792 0.641,1.433 1.433,1.433 H 0 C 0.792,2.867 1.434,2.226 1.434,1.434 1.434,0.642 0.792,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1021"
              inkscape:connector-curvature="0" />
         </g>
@@ -107,7 +108,7 @@
            id="g1027">
           <path
              d="m 0,0 h -38.418 c -0.792,0 -1.434,0.642 -1.434,1.434 0,0.792 0.642,1.433 1.434,1.433 H 0 C 0.792,2.867 1.434,2.226 1.434,1.434 1.434,0.642 0.792,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1025"
              inkscape:connector-curvature="0" />
         </g>
@@ -116,7 +117,7 @@
            id="g1031">
           <path
              d="m 0,0 h -38.418 c -0.792,0 -1.434,0.643 -1.434,1.434 0,0.792 0.642,1.433 1.434,1.433 H 0 C 0.792,2.867 1.434,2.226 1.434,1.434 1.434,0.643 0.792,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1029"
              inkscape:connector-curvature="0" />
         </g>
@@ -125,7 +126,7 @@
            id="g1035">
           <path
              d="m 0,0 h -36.125 c -0.792,0 -1.434,0.642 -1.434,1.434 0,0.792 0.642,1.433 1.434,1.433 H 0 C 0.791,2.867 1.434,2.226 1.434,1.434 1.434,0.642 0.791,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1033"
              inkscape:connector-curvature="0" />
         </g>
@@ -134,7 +135,7 @@
            id="g1039">
           <path
              d="m 0,0 h -31.537 c -0.792,0 -1.434,0.642 -1.434,1.434 0,0.792 0.642,1.433 1.434,1.433 H 0 C 0.792,2.867 1.434,2.226 1.434,1.434 1.434,0.642 0.792,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1037"
              inkscape:connector-curvature="0" />
         </g>
@@ -143,7 +144,7 @@
            id="g1043">
           <path
              d="m 0,0 h -25.804 c -0.792,0 -1.433,0.642 -1.433,1.434 0,0.792 0.641,1.433 1.433,1.433 H 0 C 0.792,2.867 1.434,2.226 1.434,1.434 1.434,0.642 0.792,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1041"
              inkscape:connector-curvature="0" />
         </g>
@@ -152,7 +153,7 @@
            id="g1047">
           <path
              d="m 0,0 h -20.644 c -0.791,0 -1.433,0.642 -1.433,1.434 0,0.791 0.642,1.433 1.433,1.433 H 0 C 0.791,2.867 1.434,2.225 1.434,1.434 1.434,0.642 0.791,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1045"
              inkscape:connector-curvature="0" />
         </g>
@@ -161,7 +162,7 @@
            id="g1051">
           <path
              d="m 0,0 h -14.909 c -0.791,0 -1.433,0.642 -1.433,1.434 0,0.792 0.642,1.433 1.433,1.433 H 0 C 0.792,2.867 1.434,2.226 1.434,1.434 1.434,0.642 0.792,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1049"
              inkscape:connector-curvature="0" />
         </g>
@@ -170,7 +171,7 @@
            id="g1055">
           <path
              d="m 0,0 h -6.307 c -0.792,0 -1.433,0.642 -1.433,1.434 0,0.792 0.641,1.433 1.433,1.433 H 0 C 0.792,2.867 1.434,2.226 1.434,1.434 1.434,0.642 0.792,0 0,0"
-             style="fill:#E3F2FF;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             style="fill:#e3f2ff;fill-opacity:1;fill-rule:nonzero;stroke:none"
              id="path1053"
              inkscape:connector-curvature="0" />
         </g>
