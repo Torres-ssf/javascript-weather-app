@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(90deg, #f2efea 20%, #b4b4b4 80%);
   color: white;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 300;
+  margin: 0;
   text-align: center;
 }
 
@@ -19,12 +24,12 @@ button:focus {
 .container {
   background: linear-gradient(145deg, #c2c9d3 20%, #596369 80%);
   box-shadow: 0 20px 30px #7d7c7a;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
   position: relative;
-  width: 25%;
-  height: 680px;
-  min-width: 400px;
-  max-width: 420px;
+  height: 800px;
+  max-width: 1200px;
   overflow: hidden;
   z-index: 0;
 }
@@ -52,9 +57,16 @@ button:focus {
   height: 56px;
 }
 
+header {
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+}
+
 .top-header {
   display: flex;
   justify-content: space-between;
+  height: 56px;
 
   p {
     margin: 16px 16px 0;
@@ -62,6 +74,7 @@ button:focus {
 }
 
 .sandw {
+  align-self: flex-start;
   background: url(../assets/dehaze-24px.svg);
   background-repeat: no-repeat;
   background-size: 24px 24px;
@@ -83,7 +96,10 @@ button:focus {
 .form {
   display: flex;
   height: 48px;
-  flex: 1;
+  position: absolute;
+  max-width: calc(100% - 96px);
+  left: 48px;
+  right: 48px;
 
   label {
     display: none;
@@ -98,7 +114,7 @@ button:focus {
     color: white;
     padding: 6px 12px 0 12px;
     font-size: 1.1rem;
-    flex: 1;
+    width: calc(100% - 20px);
   }
 
   input:focus {
@@ -107,7 +123,7 @@ button:focus {
 
   .input-appear {
     animation: appear-from-left 500ms backwards 50ms;
-    display: inline-block;
+    display: block;
   }
 
   .input-disappear {
@@ -127,7 +143,7 @@ button:focus {
 
   .appear-submit {
     animation: appear-from-position 500ms backwards 500ms;
-    display: inline-block;
+    display: block;
   }
 
   .disapear-submit {
@@ -136,6 +152,7 @@ button:focus {
 }
 
 .options {
+  justify-self: flex-end;
   border: none;
   box-sizing: border-box;
   background: url(../assets/more_vert-24px.svg) 50% 50%;
@@ -163,7 +180,7 @@ button:focus {
 }
 
 .date {
-  margin: 16px 0 8px;
+  margin: 0;
 }
 
 .time {
@@ -172,32 +189,37 @@ button:focus {
 
 main {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-evenly;
 }
 
 .city-name {
   font-weight: 300;
   font-size: 2.8rem;
-  margin: 18px 0;
+  margin: 0;
 }
 
 .w-description {
-  margin: 10px 0;
+  margin: 0;
   font-weight: 300;
 }
 
 .c-temp {
   font-size: 3rem;
-  margin: 20px 0 20px;
+  margin: 0;
+}
+
+.main-icon-container {
+  margin: 0 auto;
+  width: 50%;
+  max-width: 280px;
 }
 
 .weather-icon {
-  margin: 16px auto;
-  width: 180px;
-  height: 180px;
-}
-
-footer {
-  margin: 16px 0;
+  margin: 0;
+  max-width: 100%;
 }
 
 .animate-appear {
@@ -216,21 +238,39 @@ footer {
   animation: appear-from-sky 700ms forwards;
 }
 
+footer {
+  flex: 0;
+  margin-bottom: 20px;
+}
+
 .forecast-list {
-  padding: 0;
+  padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   list-style-type: none;
-  margin: 32px 32px;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 8px;
+  }
 
   p {
     font-size: 0.9rem;
-    margin: 6px 0;
+    margin: 0;
   }
 
-  div {
-    height: 54px;
-    width: 54px;
+  .icon-container {
+    margin: 8px auto;
+    max-width: 120px;
+  }
+
+  .icon {
+    max-width: 100%;
   }
 }
 
@@ -356,5 +396,12 @@ footer {
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .container {
+    margin: 0 auto;
+    min-height: 100vh;
   }
 }
