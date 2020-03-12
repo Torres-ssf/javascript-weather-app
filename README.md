@@ -4,9 +4,9 @@ This project is one of the Main JavaScript curriculum projects at [Microverse](h
 
 The [assignment](https://www.theodinproject.com/courses/javascript/lessons/weather-app) belongs to the [javascript](https://www.theodinproject.com/courses/javascript) module from [The Odin Project page](https://www.theodinproject.com/home). The objective is to create a weather forecast app using the weather API. The features of the app also include:
 
--Search region by name.
--Show forecast for the next hours.
--Choose between two different system for measuring heat(Fahrenheit and Celsius).
+- Search region by name.
+- Show forecast for the next hours.
+- Choose between two different system for measuring heat(Fahrenheit and Celsius).
 
 ## Built With
 
