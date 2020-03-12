@@ -10,7 +10,7 @@ The [assignment](https://www.theodinproject.com/courses/javascript/lessons/weath
 
 ## Preview
 
-<!-- ![](./demo.gif) -->
+![](./demo.gif)
 
 ## Built With
 
@@ -19,7 +19,7 @@ The [assignment](https://www.theodinproject.com/courses/javascript/lessons/weath
 
 ## Live Demo
 
-<!-- [Live Demo Link](https://ssf-restaurant-page.herokuapp.com/) -->
+[Live Demo Link](https://ssf-weather-app.herokuapp.com/)
 
 ## Getting Started
 
