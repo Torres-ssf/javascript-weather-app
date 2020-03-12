@@ -194,8 +194,7 @@ const DomManipul = (() => {
         descriptionTag.innerText = WeatherUtils.capitalize(description);
 
         iconPath = WeatherUtils.getIconUrl(id);
-        mainIcon.style.background = `${iconPath} no-repeat 50% 50%`;
-        mainIcon.style.backgroundSize = '168px 168px';
+        mainIcon.setAttribute('src', iconPath);
 
         const processedTemp = WeatherUtils.processTemp(temp, celsiusRadio.checked);
         tempTag.innerHTML = processedTemp;
@@ -216,11 +215,16 @@ const DomManipul = (() => {
 
           iconPath = WeatherUtils.getIconUrl(id, dtTxt);
 
+          const imgTag = document.createElement('img');
+          imgTag.setAttribute('class', 'icon');
+          imgTag.setAttribute('src', iconPath);
+
+
           const currentItem = forecastList[index];
 
           currentItem.children[0].innerHTML = WeatherUtils.friendForeTime(dtTxt);
-          currentItem.children[1].style.background = `${iconPath} no-repeat 50% 50%`;
-          currentItem.children[1].style.backgroundSize = '42px 42px';
+          currentItem.children[1].innerHTML ='';
+          currentItem.children[1].append(imgTag);
           const processedTemp = WeatherUtils.processTemp(temp, celsiusRadio.checked);
           currentItem.children[2].innerHTML = processedTemp;
         });

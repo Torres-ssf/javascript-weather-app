@@ -144,7 +144,7 @@ const WeatherUtils = (() => {
         conditionPath = mist;
     }
 
-    return `url(${conditionPath})`;
+    return conditionPath;
   };
 
   return {
