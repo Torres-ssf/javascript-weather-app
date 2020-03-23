@@ -16,7 +16,7 @@ The [assignment](https://www.theodinproject.com/courses/javascript/lessons/weath
 
 ## Live Demo
 
-[Live Demo Link](https://ssf-weather-app.herokuapp.com/)
+[Live Link](https://ssf-weatherapp.netlify.com/)
 
 ## Preview
 
