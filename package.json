@@ -1,9 +1,6 @@
 {
   "name": "javascript-weather-app",
   "version": "1.0.0",
-  "engines": {
-    "node": "13.7.0"
-  },
   "description": "",
   "private": true,
   "main": "index.js",
