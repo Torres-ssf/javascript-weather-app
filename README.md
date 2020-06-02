@@ -2,7 +2,7 @@
 
 This project is one of the Main JavaScript curriculum projects at [Microverse](https://https://www.microverse.org/) - @microverseinc.
 
-The [assignment](https://www.theodinproject.com/courses/javascript/lessons/weather-app) belongs to the [javascript](https://www.theodinproject.com/courses/javascript) module from [The Odin Project page](https://www.theodinproject.com/home). The objective is to create a weather forecast app using the weather API. The features of the app also include:
+The [assignment](https://www.theodinproject.com/courses/javascript/lessons/weather-app) belongs to the [Javascript](https://www.theodinproject.com/courses/javascript) module from [The Odin Project page](https://www.theodinproject.com/home). The objective is to create a weather forecast app using the weather API. The features of the app also include:
 
 - Search region by name.
 - Show forecast for the next hours.
